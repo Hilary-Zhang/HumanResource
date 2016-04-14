@@ -2,8 +2,10 @@ package com.hilary.humanresource;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class LoginActivity extends ActionBarActivity {
@@ -12,6 +14,8 @@ public class LoginActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        TextView title=(TextView)findViewById(R.id.title);
+        title.setText("人力资源");
     }
 
     @Override

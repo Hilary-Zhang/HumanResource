@@ -1,27 +1,12 @@
 package com.hilary.humanresource;
 
-import android.app.Activity;
-import android.app.TabActivity;
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TabHost;
-import android.widget.TabWidget;
 import android.widget.TextView;
 
 
@@ -32,56 +17,87 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //startActivity(new Intent(MainActivity.this, LoginActivity.class));
-
-        TabHost mTabHost = (TabHost) findViewById(android.R.id.tabhost);
+        final TabHost mTabHost = (TabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup();
-
-        View tab1=getLayoutInflater().inflate(R.layout.tab_button,null);
+        final View tab1=getLayoutInflater().inflate(R.layout.tab_button,null);
         TextView tv= (TextView) tab1.findViewById(R.id.tv);
-        tv.setText("Tab1");
-         ImageView iv=(ImageView)tab1.findViewById(R.id.iv);
-        iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_drawer));
+        TextView title=(TextView)findViewById(R.id.title);
+        title.setText("工作");
+        tv.setText("工作");
+        tv.setTextColor(getResources().getColor(R.color.blue));
+        ImageView iv=(ImageView)tab1.findViewById(R.id.iv);
+        iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo));
         mTabHost.addTab(mTabHost.newTabSpec("tab1").setContent(
                 R.id.tv1).setIndicator(tab1));
 
-        View tab2=getLayoutInflater().inflate(R.layout.tab_button,null);
+        final View tab2=getLayoutInflater().inflate(R.layout.tab_button,null);
         tv= (TextView) tab2.findViewById(R.id.tv);
-        tv.setText("Tab2");
+        tv.setText("联系人");
         iv=(ImageView)tab2.findViewById(R.id.iv);
-        iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_drawer));
+        iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren2));
         mTabHost.addTab(mTabHost.newTabSpec("tab2").setContent(
                 R.id.tv2).setIndicator(tab2));
-
-        View tab3=getLayoutInflater().inflate(R.layout.tab_button,null);
+        final View tab3=getLayoutInflater().inflate(R.layout.tab_button,null);
         tv= (TextView) tab3.findViewById(R.id.tv);
-        tv.setText("Tab3");
+        tv.setText("应用");
         iv=(ImageView)tab3.findViewById(R.id.iv);
-        iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_drawer));
+        iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong2));
         mTabHost.addTab(mTabHost.newTabSpec("tab3").setContent(
                 R.id.tv3).setIndicator(tab3));
+        mTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String tabId) {
+                if (tabId.equals("tab1")) {
+                    TextView title=(TextView)findViewById(R.id.title);
+                    title.setText("工作");
+                    TextView tv=(TextView)tab1.findViewById(R.id.tv);
+                    tv.setTextColor(getResources().getColor(R.color.blue));
+                    ImageView iv=(ImageView)tab1.findViewById(R.id.iv);
+                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo));
+                    tv=(TextView)tab2.findViewById(R.id.tv);
+                    tv.setTextColor(getResources().getColor(R.color.black));
+                    iv=(ImageView)tab2.findViewById(R.id.iv);
+                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren2));
+                    tv=(TextView)tab3.findViewById(R.id.tv);
+                    tv.setTextColor(getResources().getColor(R.color.black));
+                    iv=(ImageView)tab3.findViewById(R.id.iv);
+                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong2));
+                }
+                if (tabId.equals("tab2")) {
+                    TextView title=(TextView)findViewById(R.id.title);
+                    title.setText("联系人");
+                    TextView tv=(TextView)tab1.findViewById(R.id.tv);
+                    tv.setTextColor(getResources().getColor(R.color.black));
+                    ImageView iv=(ImageView)tab1.findViewById(R.id.iv);
+                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo2));
+                    tv=(TextView)tab2.findViewById(R.id.tv);
+                    tv.setTextColor(getResources().getColor(R.color.blue));
+                    iv=(ImageView)tab2.findViewById(R.id.iv);
+                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren));
+                    tv=(TextView)tab3.findViewById(R.id.tv);
+                    tv.setTextColor(getResources().getColor(R.color.black));
+                    iv=(ImageView)tab3.findViewById(R.id.iv);
+                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong2));
+                }
+                if (tabId.equals("tab3")) {
+                    TextView title=(TextView)findViewById(R.id.title);
+                    title.setText("应用");
+                    TextView tv=(TextView)tab1.findViewById(R.id.tv);
+                    tv.setTextColor(getResources().getColor(R.color.black));
+                    ImageView iv=(ImageView)tab1.findViewById(R.id.iv);
+                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo2));
+                    tv=(TextView)tab2.findViewById(R.id.tv);
+                    tv.setTextColor(getResources().getColor(R.color.black));
+                    iv=(ImageView)tab2.findViewById(R.id.iv);
+                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren2));
+                    tv=(TextView)tab3.findViewById(R.id.tv);
+                    tv.setTextColor(getResources().getColor(R.color.blue));
+                    iv=(ImageView)tab3.findViewById(R.id.iv);
+                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong));
+                }
+
+            }
+        });
 
     }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
 }

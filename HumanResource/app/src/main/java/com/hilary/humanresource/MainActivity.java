@@ -19,16 +19,23 @@ public class MainActivity extends AppCompatActivity {
     private ImageView iv_drawer;
     private ScrollView drawer;
     private DrawerLayout drawer_layout;
+    private TabHost tab_host;
+    private View tab_view[];
+    private TextView tab_view_text[];
+    private ImageView tab_view_image[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        //获取组件
         title=(TextView)findViewById(R.id.title);
         iv_drawer=(ImageView)findViewById(R.id.iv_drawer);
         drawer=(ScrollView)findViewById(R.id.drawer);
         drawer_layout=(DrawerLayout)findViewById(R.id.drawer_layout);
+        tab_host=(TabHost)findViewById(android.R.id.tabhost);
+        //设置左上角按钮
         iv_drawer.setImageDrawable(getResources().getDrawable(R.drawable.ic_drawer));
         iv_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,83 +45,64 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        final TabHost mTabHost = (TabHost) findViewById(android.R.id.tabhost);
-        if(mTabHost!=null)mTabHost.setup();
-        final View tab1=getLayoutInflater().inflate(R.layout.tab_button,null);
-        TextView tv= (TextView) tab1.findViewById(R.id.tv);
-        title.setText("工作");
-        tv.setText("工作");
-        tv.setTextColor(getResources().getColor(R.color.blue));
-        ImageView iv=(ImageView)tab1.findViewById(R.id.iv);
-        iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo));
-        mTabHost.addTab(mTabHost.newTabSpec("tab1").setContent(
-                R.id.tv1).setIndicator(tab1));
 
-        final View tab2=getLayoutInflater().inflate(R.layout.tab_button,null);
-        tv= (TextView) tab2.findViewById(R.id.tv);
-        tv.setText("联系人");
-        iv=(ImageView)tab2.findViewById(R.id.iv);
-        iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren2));
-        mTabHost.addTab(mTabHost.newTabSpec("tab2").setContent(
-                R.id.tv2).setIndicator(tab2));
-        final View tab3=getLayoutInflater().inflate(R.layout.tab_button,null);
-        tv= (TextView) tab3.findViewById(R.id.tv);
-        tv.setText("应用");
-        iv=(ImageView)tab3.findViewById(R.id.iv);
-        iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong2));
-        mTabHost.addTab(mTabHost.newTabSpec("tab3").setContent(
-                R.id.tv3).setIndicator(tab3));
-        mTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+        //设置tab
+        if(tab_host!=null)tab_host.setup();
+        tab_view=new View[3];
+        tab_view_text=new TextView[3];
+        tab_view_image=new ImageView[3];
+        for(int i=0;i<3;i++){
+            tab_view[i]=getLayoutInflater().inflate(R.layout.tab_button,null);
+            tab_view_text[i]=(TextView)tab_view[i].findViewById(R.id.tv);
+            tab_view_image[i]=(ImageView)tab_view[i].findViewById(R.id.iv);
+
+        }
+        tab_host.addTab(tab_host.newTabSpec("tab1").setContent(R.id.tv1).setIndicator(tab_view[0]));
+        tab_host.addTab(tab_host.newTabSpec("tab2").setContent(R.id.tv2).setIndicator(tab_view[1]));
+        tab_host.addTab(tab_host.newTabSpec("tab3").setContent(R.id.tv3).setIndicator(tab_view[2]));
+        //设置tab文字
+        tab_view_text[0].setText(getString(R.string.title_work));
+        tab_view_text[1].setText(getString(R.string.title_contact));
+        tab_view_text[2].setText(getString(R.string.title_application));
+        //设置tab图片
+        tab_view_image[0].setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo));
+        tab_view_image[1].setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren2));
+        tab_view_image[2].setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong2));
+
+
+        //初始状态
+        title.setText(getString(R.string.title_work));
+        tab_view_text[0].setTextColor(getResources().getColor(R.color.blue));
+
+        tab_host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
                 if (tabId.equals("tab1")) {
-                    title.setText("工作");
-                    TextView tv=(TextView)tab1.findViewById(R.id.tv);
-                    tv.setTextColor(getResources().getColor(R.color.blue));
-                    ImageView iv=(ImageView)tab1.findViewById(R.id.iv);
-                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo));
-                    tv=(TextView)tab2.findViewById(R.id.tv);
-                    tv.setTextColor(getResources().getColor(R.color.black));
-                    iv=(ImageView)tab2.findViewById(R.id.iv);
-                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren2));
-                    tv=(TextView)tab3.findViewById(R.id.tv);
-                    tv.setTextColor(getResources().getColor(R.color.black));
-                    iv=(ImageView)tab3.findViewById(R.id.iv);
-                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong2));
+                    title.setText(getString(R.string.title_work));
+                    tab_view_text[0].setTextColor(getResources().getColor(R.color.blue));
+                    tab_view_text[1].setTextColor(getResources().getColor(R.color.black));
+                    tab_view_text[2].setTextColor(getResources().getColor(R.color.black));
+                    tab_view_image[0].setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo));
+                    tab_view_image[1].setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren2));
+                    tab_view_image[2].setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong2));
+                } else if (tabId.equals("tab2")) {
+                    title.setText(getString(R.string.title_contact));
+                    tab_view_text[0].setTextColor(getResources().getColor(R.color.black));
+                    tab_view_text[1].setTextColor(getResources().getColor(R.color.blue));
+                    tab_view_text[2].setTextColor(getResources().getColor(R.color.black));
+                    tab_view_image[0].setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo2));
+                    tab_view_image[1].setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren));
+                    tab_view_image[2].setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong2));
+                } else {
+                    title.setText(getString(R.string.title_application));
+                    tab_view_text[0].setTextColor(getResources().getColor(R.color.black));
+                    tab_view_text[1].setTextColor(getResources().getColor(R.color.black));
+                    tab_view_text[2].setTextColor(getResources().getColor(R.color.blue));
+                    tab_view_image[0].setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo2));
+                    tab_view_image[1].setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren2));
+                    tab_view_image[2].setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong));
                 }
-                if (tabId.equals("tab2")) {
-                    title.setText("联系人");
-                    TextView tv=(TextView)tab1.findViewById(R.id.tv);
-                    tv.setTextColor(getResources().getColor(R.color.black));
-                    ImageView iv=(ImageView)tab1.findViewById(R.id.iv);
-                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo2));
-                    tv=(TextView)tab2.findViewById(R.id.tv);
-                    tv.setTextColor(getResources().getColor(R.color.blue));
-                    iv=(ImageView)tab2.findViewById(R.id.iv);
-                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren));
-                    tv=(TextView)tab3.findViewById(R.id.tv);
-                    tv.setTextColor(getResources().getColor(R.color.black));
-                    iv=(ImageView)tab3.findViewById(R.id.iv);
-                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong2));
-                }
-                if (tabId.equals("tab3")) {
-                    title.setText("应用");
-                    TextView tv=(TextView)tab1.findViewById(R.id.tv);
-                    tv.setTextColor(getResources().getColor(R.color.black));
-                    ImageView iv=(ImageView)tab1.findViewById(R.id.iv);
-                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo2));
-                    tv=(TextView)tab2.findViewById(R.id.tv);
-                    tv.setTextColor(getResources().getColor(R.color.black));
-                    iv=(ImageView)tab2.findViewById(R.id.iv);
-                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren2));
-                    tv=(TextView)tab3.findViewById(R.id.tv);
-                    tv.setTextColor(getResources().getColor(R.color.blue));
-                    iv=(ImageView)tab3.findViewById(R.id.iv);
-                    iv.setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong));
-                }
-
             }
         });
-
     }
 }

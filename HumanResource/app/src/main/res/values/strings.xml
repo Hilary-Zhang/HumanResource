@@ -4,4 +4,7 @@
     <string name="title_work">工作</string>
     <string name="title_contact">联系人</string>
     <string name="title_application">应用</string>
+    <string name="alert_request_error">请求失败</string>
+    <string name="alert_parse_json">JSON解析失败</string>
+    <string name="alert_login_success">登录成功</string>
 </resources>

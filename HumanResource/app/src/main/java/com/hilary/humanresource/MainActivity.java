@@ -1,5 +1,8 @@
 package com.hilary.humanresource;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TextView;
+
+import com.hilary.common.Params;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,11 +29,18 @@ public class MainActivity extends AppCompatActivity {
     private TextView tab_view_text[];
     private ImageView tab_view_image[];
 
+    private SharedPreferences user_preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        user_preferences=getSharedPreferences(Params.user, Context.MODE_PRIVATE);
+        if(user_preferences.getString(Params.user_id,"").equals("")){
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+            return;
+        }
         setContentView(R.layout.activity_main);
-        //startActivity(new Intent(MainActivity.this, LoginActivity.class));
         //获取组件
         title=(TextView)findViewById(R.id.title);
         iv_drawer=(ImageView)findViewById(R.id.iv_drawer);
@@ -64,15 +76,12 @@ public class MainActivity extends AppCompatActivity {
         tab_view_text[0].setText(getString(R.string.title_work));
         tab_view_text[1].setText(getString(R.string.title_contact));
         tab_view_text[2].setText(getString(R.string.title_application));
-        //设置tab图片
-        tab_view_image[0].setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo));
-        tab_view_image[1].setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren2));
-        tab_view_image[2].setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong2));
-
-
         //初始状态
         title.setText(getString(R.string.title_work));
         tab_view_text[0].setTextColor(getResources().getColor(R.color.blue));
+        tab_view_image[0].setImageDrawable(getResources().getDrawable(R.drawable.ic_gongzuo));
+        tab_view_image[1].setImageDrawable(getResources().getDrawable(R.drawable.ic_lianxiren2));
+        tab_view_image[2].setImageDrawable(getResources().getDrawable(R.drawable.ic_yingyong2));
 
         tab_host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override

@@ -35,7 +35,7 @@ public class LoginActivity extends ActionBarActivity {
     private EditText et_username;
     private EditText et_password;
     private Button bt_login;
-
+    //在SDK调用云端逻辑
     private AsyncCustomEndpoints ace;
     private SharedPreferences user_preferences;
 
@@ -43,6 +43,7 @@ public class LoginActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        // 初始化 Bmob SDK
         Bmob.initialize(this, Config.BMOB_APP_KEY);
         ace=new AsyncCustomEndpoints();
         user_preferences=getSharedPreferences(Params.user, Context.MODE_PRIVATE);
@@ -64,7 +65,6 @@ public class LoginActivity extends ActionBarActivity {
                 ace.callEndpoint(getApplicationContext(), Params.login, new JSONObject(params), new CloudCodeListener() {
                     @Override
                     public void onSuccess(Object o) {
-                        System.out.println(o);
                         try {
                             JSONObject data = new JSONObject((String) o);
                             if(data.getInt(Params.code)==1){//登录成功

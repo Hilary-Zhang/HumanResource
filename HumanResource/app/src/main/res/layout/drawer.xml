@@ -31,11 +31,14 @@
                 android:text="Hilary"
                 android:textColor="@color/white"/>
         </LinearLayout>
+        <!--首页-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="15dp"
             android:gravity="center_vertical"
+            android:id="@+id/shouye"
+            android:background="@drawable/white"
             android:orientation="horizontal">
             <ImageView
                 android:layout_width="30dp"
@@ -48,12 +51,15 @@
                 android:textColor="#000"
                 android:text="首页"/>
         </LinearLayout>
+        <!--个人信息-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="@drawable/white"
             android:layout_marginLeft="15dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/xinxi">
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -65,12 +71,15 @@
                 android:textColor="#000"
                 android:text="个人信息"/>
         </LinearLayout>
+        <!--公司制度-->
         <LinearLayout
+            android:background="@drawable/white"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="15dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/zhidu">
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -82,12 +91,15 @@
                 android:textColor="#000"
                 android:text="公司制度"/>
         </LinearLayout>
+        <!--公司公告-->
         <LinearLayout
+            android:background="@drawable/white"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="15dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/gonggao">
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -99,12 +111,14 @@
                 android:textColor="#000"
                 android:text="公司公告"/>
         </LinearLayout>
+        <!--设置-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="15dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/setting">
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"

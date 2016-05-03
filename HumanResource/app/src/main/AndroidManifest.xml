@@ -51,7 +51,7 @@
         <activity android:name=".JixiaoActivity" />
         <activity android:name=".PeixunActivity" />
         <activity android:name=".LiuyanActivity" />
-        <activity android:name=".GongzuoquanActivity"></activity>
+        <activity android:name=".GongzuoquanActivity"/>
     </application>
 
 </manifest>

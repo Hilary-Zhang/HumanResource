@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.hilary.humanresource.QingjiaActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_qingjia"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/btn_lan"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="请假"/>
+        <Button
+            android:id="@+id/btn_shengpi"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/btn_taohong"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="审批"/>
+
+    </LinearLayout>
+
 
 </RelativeLayout>

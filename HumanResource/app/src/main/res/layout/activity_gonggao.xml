@@ -2,51 +2,27 @@
 <TabHost
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@android:id/tabhost"
+    android:id="@+id/tabhost"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.hilary.humanresource.GonggaoActivity">
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <include
             android:id="@+id/toolbar"
             layout="@layout/tool_bar" />
         <TabWidget
             android:id="@android:id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#cedcd9"
-            android:layout_below="@id/toolbar"/>
-        <LinearLayout
-            android:baselineAligned="false"
-            android:layout_below="@id/toolbar"
-            android:id="@+id/yanse"
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:id="@+id/ll_weidu"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                />
-            <LinearLayout
-                android:orientation="horizontal"
-                android:id="@+id/ll_yidu"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-        </LinearLayout>
+            android:layout_height="50dp"/>
 
         <FrameLayout
             android:id="@android:id/tabcontent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            android:layout_below="@id/yanse">
+            android:background="@color/white">
             <include
                 android:id="@+id/weidu"
                 layout="@layout/tab_weidu"/>
@@ -54,5 +30,5 @@
                 android:id="@+id/yidu"
                 layout="@layout/tab_yidu"/>
         </FrameLayout>
-    </RelativeLayout>
+    </LinearLayout>
 </TabHost>

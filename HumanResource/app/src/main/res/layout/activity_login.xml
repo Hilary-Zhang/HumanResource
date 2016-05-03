@@ -12,21 +12,20 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f8a8dace"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:background="@drawable/qianhui"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="60dp"
         android:layout_below="@+id/toolbar"
         android:gravity="center">
     <LinearLayout
-        android:background="#fff"
-        android:layout_width="wrap_content"
+        android:background="@color/white"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="30dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         android:orientation="vertical">
         <TextView
             android:singleLine="true"
@@ -36,18 +35,10 @@
             android:textColor="#3D3D3D"
             android:textSize="20sp"
             android:text="人力资源管理系统"/>
-        <TextView
-            android:singleLine="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:textColor="#A3B1CA"
-            android:text="普通员工"/>
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="20dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,13 +48,17 @@
             <EditText
                 android:id="@+id/et_username"
                 android:textColor="#3D3D3D"
+                android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/white"
                 android:width="200dp"/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,8 +68,11 @@
             <EditText
                 android:id="@+id/et_password"
                 android:textColor="#3D3D3D"
+                android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/white"
                 android:inputType="textPassword"/>
         </TableRow>
         <LinearLayout

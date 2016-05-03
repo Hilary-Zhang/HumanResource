@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private View tab_view[];
     private TextView tab_view_text[];
     private ImageView tab_view_image[];
-    private LinearLayout ll_xinxi, ll_zhidu, ll_gonggao, ll_setting;
+    private LinearLayout ll_shouye,ll_xinxi, ll_zhidu, ll_gonggao, ll_setting;
     private RelativeLayout rl_qiandao, rl_qingjia, rl_chuchai, rl_jiaban, rl_lizhi, rl_hetong, rl_rizhi, rl_xiangmu;
     //在SDK调用云端逻辑
     private AsyncCustomEndpoints ace;
@@ -233,6 +233,15 @@ public class MainActivity extends AppCompatActivity {
 
     //右划界面实现
     private void drawer() {
+        ll_shouye=(LinearLayout)findViewById(R.id.shouye);
+        ll_shouye.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (drawer_layout.isDrawerOpen(drawer)) {
+                    drawer_layout.closeDrawer(drawer);
+                }
+            }
+        });
         ll_xinxi = (LinearLayout) findViewById(R.id.xinxi);
         ll_xinxi.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -19,6 +19,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/rl_xinzi"
             android:layout_weight="1"
             android:gravity="center_horizontal">
 
@@ -43,9 +44,9 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/rl_wenjuan"
             android:layout_weight="1"
             android:gravity="center_horizontal">
-
             <TextView
                 android:id="@+id/diaochai"
                 android:layout_width="match_parent"
@@ -55,7 +56,6 @@
                 android:gravity="center"
                 android:text="调查问卷"
                 android:textColor="#000" />
-
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -67,6 +67,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/rl_jixiao"
             android:layout_weight="1"
             android:gravity="center_horizontal">
 
@@ -101,6 +102,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/rl_peixun"
             android:layout_weight="1"
             android:gravity="center_horizontal">
 
@@ -125,6 +127,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/rl_liuyan"
             android:layout_weight="1"
             android:gravity="center_horizontal">
 
@@ -149,6 +152,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/rl_gongzuoquan"
             android:layout_weight="1"
             android:gravity="center_horizontal">
 
@@ -174,10 +178,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"></LinearLayout>
+        android:layout_weight="1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"></LinearLayout>
+        android:layout_weight="1"/>
 </TableLayout>

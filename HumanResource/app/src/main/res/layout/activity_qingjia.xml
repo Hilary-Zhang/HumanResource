@@ -27,7 +27,7 @@
             android:textSize="30dp"
             android:text="请假"/>
         <Button
-            android:id="@+id/btn_shengpi"
+            android:id="@+id/btn_shenpi"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_marginTop="50dp"

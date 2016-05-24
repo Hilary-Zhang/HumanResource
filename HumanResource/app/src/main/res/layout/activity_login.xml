@@ -19,7 +19,7 @@
         android:layout_below="@+id/toolbar"
         android:gravity="center">
     <LinearLayout
-        android:background="@color/white"
+        android:background="@drawable/circular_white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -51,6 +51,7 @@
                 android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingRight="30dp"
                 android:gravity="center"
                 android:background="@drawable/white"
                 android:width="200dp"/>
@@ -71,6 +72,7 @@
                 android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingRight="30dp"
                 android:gravity="center"
                 android:background="@drawable/white"
                 android:inputType="textPassword"/>

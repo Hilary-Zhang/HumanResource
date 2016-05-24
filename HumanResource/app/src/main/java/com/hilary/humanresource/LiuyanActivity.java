@@ -9,5 +9,6 @@ public class LiuyanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liuyan);
+        CloseActivity.activityList.add(this);
     }
 }

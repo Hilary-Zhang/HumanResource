@@ -43,6 +43,7 @@ public class LoginActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        CloseActivity.activityList.add(this);
         // 初始化 Bmob SDK
         Bmob.initialize(this, Config.BMOB_APP_KEY);
         ace=new AsyncCustomEndpoints();

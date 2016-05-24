@@ -26,58 +26,59 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/white"
+                android:background="@drawable/layout_selecter"
+                android:clickable="true"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:gravity="center"
                 android:textSize="18sp"
                 android:textColor="@color/black"
-                android:text="版本更新"
-                ></TextView>
+                android:text="版本更新" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/white"
+                android:background="@drawable/layout_selecter"
+                android:clickable="true"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:gravity="center"
                 android:textSize="18sp"
                 android:textColor="@color/black"
-                android:text="功能介绍"
-                ></TextView>
+                android:text="功能介绍" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/white"
+                android:background="@drawable/layout_selecter"
+                android:clickable="true"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:gravity="center"
                 android:textSize="18sp"
                 android:textColor="@color/black"
-                android:text="帮助"
-                ></TextView>
+                android:text="帮助" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/white"
+                android:background="@drawable/layout_selecter"
+                android:clickable="true"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:gravity="center"
                 android:textSize="18sp"
                 android:textColor="@color/black"
-                android:text="反馈"
-                ></TextView>
+                android:text="反馈"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/white"
+                android:id="@+id/exit"
+                android:background="@drawable/layout_selecter"
+                android:clickable="true"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:gravity="center"
                 android:textSize="18sp"
                 android:textColor="@color/black"
-                android:text="退出"
-                ></TextView>
+                android:text="退出登录"/>
         </LinearLayout>
     </LinearLayout>
 

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView tab_view_image[];
     private LinearLayout ll_shouye,ll_xinxi, ll_zhidu, ll_gonggao, ll_setting;
     private RelativeLayout rl_qiandao, rl_qingjia, rl_chuchai, rl_jiaban, rl_lizhi, rl_hetong, rl_rizhi, rl_xiangmu;
+    private RelativeLayout rl_xinzi, rl_wenjuan, rl_jixiao, rl_peixun, rl_liuyan, rl_gongzuoquan;
     //在SDK调用云端逻辑
     private AsyncCustomEndpoints ace;
 
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        CloseActivity.activityList.add(this);
         // 初始化 Bmob SDK
         Bmob.initialize(this, Config.BMOB_APP_KEY);
         ace = new AsyncCustomEndpoints();
@@ -73,8 +76,7 @@ public class MainActivity extends AppCompatActivity {
         contact(); //联系人界面
         drawer();//右划界面
         work();//工作界面的实现
-
-
+        apply();//应用界面实现
     }
 
     @Override
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         toggle.onConfigurationChanged(newConfig);
     }
 
-    //Tab切换图标设置
+    //Tab切换设置
     private void initView() {
         //获取组件
         title = (TextView) findViewById(R.id.title);
@@ -99,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         tab_host = (TabHost) findViewById(android.R.id.tabhost);
         ep = (ExpandableListView) findViewById(R.id.ep1);
         //设置左上角按钮
+        //iv_drawer.setImageDrawable(ContextCompat.getDrawable(android.R.drawable.dr));
         iv_drawer.setImageDrawable(getResources().getDrawable(R.drawable.ic_drawer));
         iv_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -339,6 +342,60 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, XiangmuActivity.class));
             }
         });
+
+    }
+
+    //应用界面实现
+    private void apply(){
+        rl_xinzi=(RelativeLayout)findViewById(R.id.rl_xinzi);
+        rl_wenjuan=(RelativeLayout)findViewById(R.id.rl_wenjuan);
+        rl_jixiao=(RelativeLayout)findViewById(R.id.rl_jixiao);
+        rl_peixun=(RelativeLayout)findViewById(R.id.rl_peixun);
+        rl_liuyan=(RelativeLayout)findViewById(R.id.rl_liuyan);
+        rl_gongzuoquan=(RelativeLayout)findViewById(R.id.rl_gongzuoquan);
+        rl_xinzi.setClickable(true);
+        rl_wenjuan.setClickable(true);
+        rl_jixiao.setClickable(true);
+        rl_peixun.setClickable(true);
+        rl_liuyan.setClickable(true);
+        rl_gongzuoquan.setClickable(true);
+        rl_xinzi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,XinziActivity.class));
+            }
+        });
+        rl_wenjuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,WenjuanActivity.class));
+            }
+        });
+        rl_jixiao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,JixiaoActivity.class));
+            }
+        });
+        rl_peixun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,PeixunActivity.class));
+            }
+        });
+        rl_liuyan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,LiuyanActivity.class));
+            }
+        });
+        rl_gongzuoquan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,GongzuoquanActivity.class));
+            }
+        });
+
 
     }
 }

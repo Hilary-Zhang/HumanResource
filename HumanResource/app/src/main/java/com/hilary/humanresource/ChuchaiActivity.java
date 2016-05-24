@@ -12,6 +12,7 @@ public class ChuchaiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chuchai);
+        CloseActivity.activityList.add(this);
         title=(TextView)findViewById(R.id.title);
         title.setText("出差");
     }

@@ -24,6 +24,21 @@
             android:layout_gravity="center"
             android:textSize="30dp"
             android:text="签到"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/local"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:text="正在定位"
+            android:gravity="center"/>
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            />
 
     </LinearLayout>
 

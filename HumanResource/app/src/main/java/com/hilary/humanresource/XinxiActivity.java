@@ -2,9 +2,12 @@ package com.hilary.humanresource;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hilary.common.Config;
@@ -24,6 +27,7 @@ import cn.bmob.v3.listener.CloudCodeListener;
 
 public class XinxiActivity extends AppCompatActivity {
     private TextView title;
+    private ImageView iv_drawer;
     private AsyncCustomEndpoints ace; //在SDK调用云端逻辑
     private SharedPreferences user_Preferences;
     private EditText username,sex,age,department,phone_number,wechat,qq,address;
@@ -32,6 +36,7 @@ public class XinxiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xinxi);
+        CloseActivity.activityList.add(this);
         title=(TextView)findViewById(R.id.title);
         username=(EditText)findViewById(R.id.username);
         sex=(EditText)findViewById(R.id.sex);
@@ -41,6 +46,15 @@ public class XinxiActivity extends AppCompatActivity {
         wechat=(EditText)findViewById(R.id.wechat);
         qq=(EditText)findViewById(R.id.qq);
         address=(EditText)findViewById(R.id.address);
+        iv_drawer=(ImageView)findViewById(R.id.iv_drawer);
+        iv_drawer.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_back));
+        //toolbar返回按钮实现
+        iv_drawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         title.setText("个人信息");
         Bmob.initialize(this, Config.BMOB_APP_KEY);// 初始化 Bmob SDK
         ace = new AsyncCustomEndpoints();

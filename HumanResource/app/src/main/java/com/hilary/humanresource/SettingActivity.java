@@ -8,6 +8,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ThemedSpinnerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,7 @@ import com.hilary.common.Params;
 public class SettingActivity extends AppCompatActivity {
     private TextView title;
     private ImageView iv_drawer;
-    private TextView exit;
+    private TextView banben,gongneng,help,fankui,exit;
     private Button btn_ok,btn_cancel;
     private SharedPreferences user_preferences;
 
@@ -29,6 +30,10 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
         CloseActivity.activityList.add(this);
         title=(TextView)findViewById(R.id.title);
+        banben=(TextView)findViewById(R.id.banben);
+        gongneng=(TextView)findViewById(R.id.gongneng);
+        help=(TextView)findViewById(R.id.help);
+        fankui=(TextView)findViewById(R.id.fankui);
         exit=(TextView)findViewById(R.id.exit);
         iv_drawer=(ImageView)findViewById(R.id.iv_drawer);
         iv_drawer.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_back));
@@ -40,6 +45,31 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
         title.setText("设置");
+        banben.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingActivity.this,BanbenActivity.class));
+            }
+        });
+        gongneng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingActivity.this,GongnengActivity.class));
+            }
+        });
+       help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingActivity.this,HelpActivity.class));
+            }
+        });
+        fankui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingActivity.this,FankuiActivity.class));
+            }
+        });
+
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +86,7 @@ public class SettingActivity extends AppCompatActivity {
                         user_preferences.edit().clear().apply();
                         CloseActivity.exitClient(SettingActivity.this);
                         startActivity(new Intent(SettingActivity.this, LoginActivity.class));
+
                     }
                 });
                 btn_cancel.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +95,6 @@ public class SettingActivity extends AppCompatActivity {
                       dialog.dismiss();
                     }
                 });
-
                 dialog.setView(view);
                 dialog .show();
             }

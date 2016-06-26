@@ -50,7 +50,6 @@
 
     <!--右划菜单-->
     <include
-        android:id="@+id/drawer"
         layout="@layout/drawer" />
 
 </android.support.v4.widget.DrawerLayout>

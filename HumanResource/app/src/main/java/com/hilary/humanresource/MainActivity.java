@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tab_view_text[];
     private ImageView tab_view_image[];
     private LinearLayout ll_shouye,ll_xinxi, ll_zhidu, ll_gonggao, ll_setting;
-    private RelativeLayout rl_qiandao, rl_qingjia, rl_chuchai, rl_jiaban, rl_lizhi, rl_hetong, rl_rizhi, rl_xiangmu;
-    private RelativeLayout rl_xinzi, rl_wenjuan, rl_jixiao, rl_peixun, rl_liuyan, rl_gongzuoquan;
+    private RelativeLayout rl_qiandao, rl_qingjia, rl_chuchai, rl_jiaban, rl_lizhi, rl_hetong;
+    private RelativeLayout rl_xinzi, rl_wenjuan, rl_jixiao, rl_peixun, rl_rizhi, rl_xiangmu;
     //在SDK调用云端逻辑
     private AsyncCustomEndpoints ace;
 
@@ -284,16 +284,12 @@ public class MainActivity extends AppCompatActivity {
         rl_jiaban = (RelativeLayout) findViewById(R.id.rl_jiaban);
         rl_lizhi = (RelativeLayout) findViewById(R.id.rl_lizhi);
         rl_hetong = (RelativeLayout) findViewById(R.id.rl_hetong);
-        rl_rizhi = (RelativeLayout) findViewById(R.id.rl_rizhi);
-        rl_xiangmu = (RelativeLayout) findViewById(R.id.rl_xiangmu);
         rl_qiandao.setClickable(true);
         rl_qingjia.setClickable(true);
         rl_chuchai.setClickable(true);
         rl_jiaban.setClickable(true);
         rl_lizhi.setClickable(true);
         rl_hetong.setClickable(true);
-        rl_rizhi.setClickable(true);
-        rl_xiangmu.setClickable(true);
         rl_qiandao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -330,18 +326,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, HetongActivity.class));
             }
         });
-        rl_rizhi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RizhiActivity.class));
-            }
-        });
-        rl_xiangmu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, XiangmuActivity.class));
-            }
-        });
+
 
     }
 
@@ -351,14 +336,14 @@ public class MainActivity extends AppCompatActivity {
         rl_wenjuan=(RelativeLayout)findViewById(R.id.rl_wenjuan);
         rl_jixiao=(RelativeLayout)findViewById(R.id.rl_jixiao);
         rl_peixun=(RelativeLayout)findViewById(R.id.rl_peixun);
-        rl_liuyan=(RelativeLayout)findViewById(R.id.rl_liuyan);
-        rl_gongzuoquan=(RelativeLayout)findViewById(R.id.rl_gongzuoquan);
+        rl_rizhi = (RelativeLayout) findViewById(R.id.rl_rizhi);
+        rl_xiangmu = (RelativeLayout) findViewById(R.id.rl_xiangmu);
         rl_xinzi.setClickable(true);
         rl_wenjuan.setClickable(true);
         rl_jixiao.setClickable(true);
         rl_peixun.setClickable(true);
-        rl_liuyan.setClickable(true);
-        rl_gongzuoquan.setClickable(true);
+        rl_rizhi.setClickable(true);
+        rl_xiangmu.setClickable(true);
         rl_xinzi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -383,18 +368,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,PeixunActivity.class));
             }
         });
-        rl_liuyan.setOnClickListener(new View.OnClickListener() {
+
+        rl_rizhi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,LiuyanActivity.class));
+                startActivity(new Intent(MainActivity.this, RizhiActivity.class));
             }
         });
-        rl_gongzuoquan.setOnClickListener(new View.OnClickListener() {
+        rl_xiangmu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,GongzuoquanActivity.class));
+                startActivity(new Intent(MainActivity.this, XiangmuActivity.class));
             }
         });
+
 
 
     }

@@ -18,18 +18,16 @@
             android:gravity="center"
             android:orientation="vertical"
             >
-            <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/ic_touxiang"/>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:id="@+id/touxiang"
+                android:background="@drawable/ic_touxiang"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:textSize="18sp"
-                android:text="Hilary"
-                android:textColor="@color/white"/>
+                android:text="Hilary"/>
+
         </LinearLayout>
         <!--首页-->
         <LinearLayout
@@ -131,9 +129,6 @@
                 android:textColor="#000"
                 android:text="设置"/>
         </LinearLayout>
-
-        </LinearLayout>
-
-
+    </LinearLayout>
 </ScrollView>
 

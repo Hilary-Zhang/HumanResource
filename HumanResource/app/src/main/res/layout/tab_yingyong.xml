@@ -125,53 +125,53 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl_rizhi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/rl_liuyan"
             android:layout_weight="1"
             android:gravity="center_horizontal">
 
             <TextView
-                android:id="@+id/liuyanban"
+                android:id="@+id/rizhi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="留言板"
+                android:text="日志"
                 android:textColor="#000" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_above="@id/liuyanban"
+                android:layout_above="@id/rizhi"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_liuyanban" />
+                android:src="@drawable/ic_rizhi" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl_xiangmu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/rl_gongzuoquan"
             android:layout_weight="1"
             android:gravity="center_horizontal">
 
             <TextView
-                android:id="@+id/gongzuoquan"
+                android:id="@+id/xiangmu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="工作圈"
+                android:text="项目管理"
                 android:textColor="#000" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_above="@id/gongzuoquan"
+                android:layout_above="@id/xiangmu"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_gongzuoquan" />
+                android:src="@drawable/ic_xiangmu" />
         </RelativeLayout>
     </TableRow>
 

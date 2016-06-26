@@ -14,7 +14,7 @@
             android:layout_height="30dp"
             android:id="@+id/iv_drawer"
             android:layout_marginLeft="8dp"
-            android:foregroundGravity="center_vertical"
+            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:contentDescription="@string/app_name"/>
 
@@ -26,5 +26,12 @@
             android:textSize="20sp"
             android:layout_centerInParent="true"
             />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/iv_look"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
     </RelativeLayout>
 </android.support.v7.widget.Toolbar>

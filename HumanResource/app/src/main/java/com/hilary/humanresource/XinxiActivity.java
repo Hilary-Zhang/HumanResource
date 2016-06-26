@@ -62,7 +62,7 @@ public class XinxiActivity extends AppCompatActivity {
         final Map<String,String> params=new HashMap<>();
         params.put(Params.user_id,user_Preferences.getString(Params.user_id,""));
         //第一个参数是上下文对象，第二个参数是云端逻辑的方法名称，第三个参数是上传到云端逻辑的参数列表（JSONObject cloudCodeParams），第四个参数是回调类
-        ace.callEndpoint(getApplicationContext(), Params.get_infomation, new JSONObject(params), new CloudCodeListener() {
+        ace.callEndpoint(getApplicationContext(), Params.get_information, new JSONObject(params), new CloudCodeListener() {
 
             @Override
             public void onSuccess(Object o) {

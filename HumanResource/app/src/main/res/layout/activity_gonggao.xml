@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TabHost
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tabhost"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/qianhui"
+    android:orientation="vertical"
     tools:context="com.hilary.humanresource.GonggaoActivity">
-    <LinearLayout
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar" />
+
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/tool_bar" />
-        <TabWidget
-            android:id="@android:id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"/>
-
-        <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white">
-            <include
-                android:id="@+id/weidu"
-                layout="@layout/tab_weidu"/>
-            <include
-                android:id="@+id/yidu"
-                layout="@layout/tab_yidu"/>
-        </FrameLayout>
-    </LinearLayout>
-</TabHost>
+        android:id="@+id/lv_news"/>
+</LinearLayout>

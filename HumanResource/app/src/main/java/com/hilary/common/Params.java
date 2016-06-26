@@ -21,6 +21,7 @@ public class Params{
     public final static String get_leave="get_leave";
     public final static String get_information="get_information";
     public final static String get_notice="get_notice";
+    public final static String get_salary="get_salary";
     public final static String get_sign_list="get_sign_list";
     public final static String latitude="latitude";
     public final static String login="login";
@@ -33,6 +34,7 @@ public class Params{
     public final static String phone_number="phone_number";
     public final static String qq="qq";
     public final static String reason="reason";
+    public final static String salary="salary";
     public final static String sex="sex";
     public final static String sign_in="sign_in";
     public final static String sign_time="sign_time";

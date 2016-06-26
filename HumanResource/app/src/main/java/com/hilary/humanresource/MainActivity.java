@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
     //联系人界面
     private void contact() {
         //第一个参数是上下文对象，第二个参数是云端逻辑的方法名称，第三个参数是上传到云端逻辑的参数列表（JSONObject cloudCodeParams），第四个参数是回调类
-        ace.callEndpoint(getApplicationContext(), Params.get_contat_table, new JSONObject(), new CloudCodeListener() {
+        ace.callEndpoint(getApplicationContext(), Params.get_contact_table, new JSONObject(), new CloudCodeListener() {
             @Override
             public void onSuccess(Object object) {
                 try {

@@ -39,7 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:id="@+id/evection_address"
+                android:id="@+id/address"
+                android:textColor="@color/black"
                 android:textColorHint="@color/gray"
                 android:hint="@string/hint_address"
                 android:textSize="16sp"/>
@@ -66,6 +67,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/begin"
                     android:layout_gravity="center"
                     android:textColor="@color/black"
                     android:textSize="18sp"
@@ -94,8 +96,11 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/days"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:textColorHint="@color/gray"
+                android:textColor="@color/black"
                 android:hint="@string/hint_days"
                 android:textSize="18sp"/>
         </LinearLayout>
@@ -117,50 +122,18 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/reason"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:textColorHint="@color/gray"
+                android:textColor="@color/black"
                 android:hint="@string/hint_reason"
                 android:textSize="18sp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/white"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:text="所在部门"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="right">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:text="@string/select"/>
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_to"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"/>
-            </LinearLayout>
         </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:id="@+id/bt_apply"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"

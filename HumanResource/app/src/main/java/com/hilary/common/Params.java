@@ -1,6 +1,7 @@
 package com.hilary.common;
 
 public class Params{
+    public final static String add_business="add_business";
     public final static String add_leave="add_leave";
     public final static String address="address";
     public final static String age="age";

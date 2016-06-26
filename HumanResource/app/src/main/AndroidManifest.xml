@@ -74,7 +74,8 @@
         <activity android:name=".HelpActivity" />
         <activity android:name=".FankuiActivity" />
         <activity android:name=".GonggaoXiangqingActivity" />
-        <activity android:name=".QingjiaListActivity"></activity>
+        <activity android:name=".QingjiaListActivity" />
+        <activity android:name=".ChuchaiListActivity"></activity>
     </application>
 
 </manifest>

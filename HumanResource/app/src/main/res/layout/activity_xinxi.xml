@@ -32,7 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
                     android:text="头像："
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -61,7 +61,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -74,7 +74,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:id="@+id/username"
-                        android:focusable="false"
+                        android:enabled="false"
                         android:gravity="center_vertical"
                         android:layout_marginRight="@dimen/activity_horizontal_margin"
                         android:textColor="@color/gray" />
@@ -88,7 +88,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -101,7 +101,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:id="@+id/sex"
-                        android:focusable="false"
+                        android:enabled="false"
                         android:gravity="center_vertical"
                         android:layout_marginRight="@dimen/activity_horizontal_margin"
                         android:textColor="@color/gray" />
@@ -115,7 +115,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -128,7 +128,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:id="@+id/age"
-                        android:focusable="false"
+                        android:enabled="false"
                         android:gravity="center_vertical"
                         android:layout_marginRight="@dimen/activity_horizontal_margin"
                         android:textColor="@color/gray"/>
@@ -142,7 +142,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -155,7 +155,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:id="@+id/department"
-                        android:focusable="false"
+                        android:enabled="false"
                         android:gravity="center_vertical"
                         android:layout_marginRight="@dimen/activity_horizontal_margin"
                         android:textColor="@color/gray" />
@@ -169,7 +169,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -182,7 +182,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:id="@+id/phone_number"
-                        android:focusable="false"
+                        android:enabled="false"
                         android:gravity="center_vertical"
                         android:layout_marginRight="@dimen/activity_horizontal_margin"
                         android:textColor="@color/gray" />
@@ -196,7 +196,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -209,7 +209,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:id="@+id/wechat"
-                        android:focusable="false"
+                        android:enabled="false"
                         android:gravity="center_vertical"
                         android:layout_marginRight="@dimen/activity_horizontal_margin"
                         android:textColor="@color/gray" />
@@ -223,7 +223,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -236,7 +236,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:id="@+id/qq"
-                        android:focusable="false"
+                        android:enabled="false"
                         android:gravity="center_vertical"
                         android:layout_marginRight="@dimen/activity_horizontal_margin"
                         android:textColor="@color/gray" />
@@ -251,7 +251,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -261,8 +261,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:id="@+id/address"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:focusable="false"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:enabled="false"
                     android:layout_marginEnd="5dp"
                     android:textColor="@color/gray"/>
             </LinearLayout>
@@ -272,6 +272,7 @@
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:background="@drawable/btn_blue"
+                android:id="@+id/bt_command"
                 android:text="修改"
                 android:textSize="20sp"/>
         </LinearLayout>

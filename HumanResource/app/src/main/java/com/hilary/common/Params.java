@@ -2,6 +2,7 @@ package com.hilary.common;
 
 public class Params{
     public final static String add_leave="add_leave";
+    public final static String add_overtime="add_overtime";
     public final static String address="address";
     public final static String age="age";
     public final static String begin="begin";
@@ -9,9 +10,11 @@ public class Params{
     public final static String content="content";
     public final static String createdAt="createdAt";
     public final static String data="data";
+    public final static String date="date";
     public final static String days="days";
     public final static String department="department";
     public final static String edit_information="edit_information";
+    public final static String end="end";
     public final static String get_contact_table="get_contact_table";
     public final static String get_leave="get_leave";
     public final static String get_information="get_information";

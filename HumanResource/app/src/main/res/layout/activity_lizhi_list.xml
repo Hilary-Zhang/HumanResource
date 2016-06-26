@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/qianhui"
-    tools:context="com.hilary.humanresource.ChuchaiListActivity">
+    tools:context="com.hilary.humanresource.LizhiListActivity">
     <include
         android:id="@+id/toolbar"
         layout="@layout/tool_bar"/>
@@ -16,10 +15,10 @@
         android:orientation="vertical"
         >
 
-    <ListView
-        android:id="@+id/lv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        <ListView
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
 </RelativeLayout>

@@ -14,6 +14,7 @@ public class Params{
     public final static String department="department";
     public final static String edit_information="edit_information";
     public final static String get_contact_table="get_contact_table";
+    public final static String get_business="get_business";
     public final static String get_leave="get_leave";
     public final static String get_information="get_information";
     public final static String get_notice="get_notice";

@@ -81,7 +81,7 @@ public class QingjiaListActivity extends AppCompatActivity {
                             leave_data.put(Params.days,leaves.getJSONObject(i).getString(Params.days));
                             leaves_data.add(leave_data);
                         }
-                        adapter=new SimpleAdapter(QingjiaListActivity.this,leaves_data,R.layout.qingjia_item,new String[]{Params.reason,Params.type,Params.begin,Params.days},new int[]{R.id.name,R.id.time,R.id.content,R.id.state});
+                        adapter=new SimpleAdapter(QingjiaListActivity.this,leaves_data,R.layout.list_item,new String[]{Params.reason,Params.type,Params.begin,Params.days},new int[]{R.id.name,R.id.time,R.id.content,R.id.state});
                         lv.setAdapter(adapter);
                     }else{
                         Utils.Toast(getApplicationContext(),data.getString(Params.msg));

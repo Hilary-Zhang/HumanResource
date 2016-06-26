@@ -75,7 +75,8 @@
         <activity android:name=".FankuiActivity" />
         <activity android:name=".GonggaoXiangqingActivity" />
         <activity android:name=".QingjiaListActivity" />
-        <activity android:name=".ChuchaiListActivity"></activity>
+        <activity android:name=".ChuchaiListActivity" />
+        <activity android:name=".LizhiListActivity"></activity>
     </application>
 
 </manifest>

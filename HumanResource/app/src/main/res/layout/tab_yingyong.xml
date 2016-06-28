@@ -67,41 +67,6 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/rl_jixiao"
-            android:layout_weight="1"
-            android:gravity="center_horizontal">
-
-            <TextView
-                android:id="@+id/jixiao"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="绩效"
-                android:textColor="#000" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@id/jixiao"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_jixiao" />
-        </RelativeLayout>
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/rl_peixun"
             android:layout_weight="1"
             android:gravity="center_horizontal">
@@ -124,6 +89,15 @@
                 android:src="@drawable/ic_peixun" />
         </RelativeLayout>
 
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp">
         <RelativeLayout
             android:id="@+id/rl_rizhi"
             android:layout_width="wrap_content"
@@ -148,7 +122,6 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_rizhi" />
         </RelativeLayout>
-
         <RelativeLayout
             android:id="@+id/rl_xiangmu"
             android:layout_width="wrap_content"
@@ -173,6 +146,10 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_xiangmu" />
         </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
     </TableRow>
 
     <LinearLayout

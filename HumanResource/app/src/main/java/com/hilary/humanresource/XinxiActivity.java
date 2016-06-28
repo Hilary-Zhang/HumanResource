@@ -26,7 +26,7 @@ import cn.bmob.v3.Bmob;
 import cn.bmob.v3.listener.CloudCodeListener;
 
 public class XinxiActivity extends AppCompatActivity {
-    private TextView title;
+    private TextView title,touxiang;
     private ImageView iv_drawer;
     private Button bt_command;
     private AsyncCustomEndpoints ace; //在SDK调用云端逻辑
@@ -39,6 +39,7 @@ public class XinxiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_xinxi);
         CloseActivity.activityList.add(this);
         title=(TextView)findViewById(R.id.title);
+        touxiang=(TextView)findViewById(R.id.touxiang);
         username=(EditText)findViewById(R.id.username);
         sex=(EditText)findViewById(R.id.sex);
         age=(EditText)findViewById(R.id.age);
@@ -72,6 +73,7 @@ public class XinxiActivity extends AppCompatActivity {
                     JSONObject result=new JSONObject((String) o);
                     if(result.getInt(Params.code)==1){//获取个人信息
                         JSONObject data = result.getJSONObject(Params.data);
+                        touxiang.setText(data.getString(Params.username));
                         username.setText(data.getString(Params.username));
                         sex.setText(data.getString(Params.sex));
                         age.setText(data.getString(Params.age));

@@ -1,28 +1,63 @@
 package com.hilary.humanresource;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TabHost;
 import android.widget.TextView;
+
+import com.hilary.common.Config;
+import com.hilary.common.Params;
+import com.hilary.common.Utils;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+import cn.bmob.v3.AsyncCustomEndpoints;
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.listener.CloudCodeListener;
 
 public class XiangmuActivity extends AppCompatActivity {
     private ImageView iv_drawer;
     private TextView title;
     private TabHost tabHost;
     private TextView tab_text[];
+    private ListView lv_unwork,lv_working,lv_worked;
+    private AsyncCustomEndpoints ace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xiangmu);
         CloseActivity.activityList.add(this);
+        Bmob.initialize(this, Config.BMOB_APP_KEY);
+        ace=new AsyncCustomEndpoints();
         title=(TextView)findViewById(R.id.title);
         iv_drawer=(ImageView)findViewById(R.id.iv_drawer);
+        lv_unwork=(ListView)findViewById(R.id.lv_unwork);
+        lv_working=(ListView)findViewById(R.id. lv_working);
+        lv_worked=(ListView)findViewById(R.id.lv_worked);
         title.setText("项目管理");
         iv_drawer.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_back));
+        iv_drawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         tabHost = (TabHost) findViewById(R.id.tabhost);
         //设置tab
         tab_text = new TextView[3];
@@ -62,6 +97,99 @@ public class XiangmuActivity extends AppCompatActivity {
                         tab_text[2].setTextColor(getResources().getColor(R.color.blue));
                         break;
                 }
+            }
+        });
+
+        Map<String,String> params= new HashMap<>();
+        params.put(Params.status,"1");
+        ace.callEndpoint(getApplicationContext(), Params.get_project, new JSONObject(params), new CloudCodeListener() {
+            @Override
+            public void onSuccess(Object o) {
+                try {
+                    JSONObject data = new JSONObject((String) o);
+                    if(data.getInt(Params.code)==1){
+                        JSONArray projects=data.getJSONArray(Params.data);
+                        List<Map<String,String>> prjects_data=new LinkedList<>();
+                        for(int i=0;i<projects.length();i++){
+                            Map<String,String> project_data=new HashMap<>();
+                            project_data.put(Params.name,projects.getJSONObject(i).getString(Params.name));
+                            project_data.put(Params.detail,projects.getJSONObject(i).getString(Params.detail));
+                            prjects_data.add( project_data);
+                        }
+                        lv_unwork.setAdapter(new SimpleAdapter(XiangmuActivity.this,prjects_data,R.layout.xiangmu_item,new String[]{Params.name,Params.detail},new int[]{R.id.xiangmu_title,R.id.xiangmu_detail}));
+                    }else{
+                        Utils.Toast(getApplicationContext(),data.getString(Params.msg));
+                    }
+                } catch (JSONException e) {
+                    Utils.Toast(getApplicationContext(),R.string.alert_parse_json);
+                }
+            }
+
+            @Override
+            public void onFailure(int i, String s) {
+                System.out.println(s);
+                Utils.Toast(getApplicationContext(),R.string.alert_request_error);
+            }
+        });
+        params.put(Params.status,"2");
+        ace.callEndpoint(getApplicationContext(), Params.get_project, new JSONObject(params), new CloudCodeListener() {
+            @Override
+            public void onSuccess(Object o) {
+                try {
+                    JSONObject data = new JSONObject((String) o);
+                    if(data.getInt(Params.code)==1){
+                        JSONArray projects=data.getJSONArray(Params.data);
+                        List<Map<String,String>> prjects_data=new LinkedList<>();
+                        for(int i=0;i<projects.length();i++){
+                            Map<String,String> project_data=new HashMap<>();
+                            project_data.put(Params.name,projects.getJSONObject(i).getString(Params.name));
+                            project_data.put(Params.detail,projects.getJSONObject(i).getString(Params.detail));
+                            prjects_data.add( project_data);
+                        }
+                        lv_working.setAdapter(new SimpleAdapter(XiangmuActivity.this,prjects_data,R.layout.xiangmu_item,new String[]{Params.name,Params.detail},new int[]{R.id.xiangmu_title,R.id.xiangmu_detail}));
+                    }else{
+                        Utils.Toast(getApplicationContext(),data.getString(Params.msg));
+                    }
+                } catch (JSONException e) {
+                    Utils.Toast(getApplicationContext(),R.string.alert_parse_json);
+                }
+            }
+
+            @Override
+            public void onFailure(int i, String s) {
+                System.out.println(s);
+                Utils.Toast(getApplicationContext(),R.string.alert_request_error);
+            }
+        });
+
+        params.put(Params.status,"3");
+        ace.callEndpoint(getApplicationContext(), Params.get_project, new JSONObject(params), new CloudCodeListener() {
+            @Override
+            public void onSuccess(Object o) {
+                try {
+                    JSONObject data = new JSONObject((String) o);
+                    if(data.getInt(Params.code)==1){
+                        JSONArray projects=data.getJSONArray(Params.data);
+                        List<Map<String,String>> prjects_data=new LinkedList<>();
+                        for(int i=0;i<projects.length();i++){
+                            Map<String,String> project_data=new HashMap<>();
+                            project_data.put(Params.name,projects.getJSONObject(i).getString(Params.name));
+                            project_data.put(Params.detail,projects.getJSONObject(i).getString(Params.detail));
+                            prjects_data.add( project_data);
+                        }
+                        lv_worked.setAdapter(new SimpleAdapter(XiangmuActivity.this,prjects_data,R.layout.xiangmu_item,new String[]{Params.name,Params.detail},new int[]{R.id.xiangmu_title,R.id.xiangmu_detail}));
+                    }else{
+                        Utils.Toast(getApplicationContext(),data.getString(Params.msg));
+                    }
+                } catch (JSONException e) {
+                    Utils.Toast(getApplicationContext(),R.string.alert_parse_json);
+                }
+            }
+
+            @Override
+            public void onFailure(int i, String s) {
+                System.out.println(s);
+                Utils.Toast(getApplicationContext(),R.string.alert_request_error);
             }
         });
     }

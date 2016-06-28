@@ -67,21 +67,36 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:text="开始时间"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/begin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:text="@string/select"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/begin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/select"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/ic_to" />
+            </LinearLayout>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -91,26 +106,42 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:text="结束时间"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/end"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:text="@string/select"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/select"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/ic_to" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/white"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"

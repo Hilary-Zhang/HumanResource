@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/qianhui"
+    android:orientation="vertical"
     tools:context="com.hilary.humanresource.PeixunActivity">
     <include
         android:id="@+id/toolbar"
         layout="@layout/tool_bar" />
-    <LinearLayout
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:layout_below="@id/toolbar"
-        android:background="@color/white"
-        android:orientation="vertical">
+        android:id="@+id/lv_peixun"/>
 
-    </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

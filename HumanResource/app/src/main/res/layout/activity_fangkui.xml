@@ -19,15 +19,17 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tijiao"
+            android:id="@+id/bt_apply"
             android:layout_alignParentBottom="true"
             android:background="@color/blue"
             android:text="提交"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="400dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:gravity="left"
             android:textColorHint="@color/gray"
+            android:id="@+id/content"
             android:hint="请输入您的宝贵意见..."
             android:textColor="@color/black"
             android:background="@drawable/black_box"

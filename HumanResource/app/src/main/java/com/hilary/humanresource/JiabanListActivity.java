@@ -29,8 +29,7 @@ import cn.bmob.v3.AsyncCustomEndpoints;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.listener.CloudCodeListener;
 
-public class QingjiaListActivity extends AppCompatActivity {
-
+public class JiabanListActivity extends AppCompatActivity {
     private TextView title;
     private ImageView iv_drawer;
     private ListView lv;
@@ -43,7 +42,7 @@ public class QingjiaListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qingjia_list);
+        setContentView(R.layout.activity_jiaban_list);
         CloseActivity.activityList.add(this);
 
         Bmob.initialize(this, Config.BMOB_APP_KEY);
@@ -54,34 +53,33 @@ public class QingjiaListActivity extends AppCompatActivity {
         title=(TextView)findViewById(R.id.title);
         iv_drawer=(ImageView)findViewById(R.id.iv_drawer);
         iv_drawer.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_back));
-        //toolbar返回按钮实现
         iv_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        title.setText("请假列表");
+        title.setText("加班列表");
 
         Map<String,String> params= new HashMap<>();
         params.put(Params.user_id,user_preferences.getString(Params.user_id,""));
-        ace.callEndpoint(getApplicationContext(), Params.get_leave, new JSONObject(params), new CloudCodeListener() {
+        ace.callEndpoint(getApplicationContext(), Params.get_overtime, new JSONObject(params), new CloudCodeListener() {
             @Override
             public void onSuccess(Object o) {
                 try {
                     JSONObject data = new JSONObject((String) o);
                     if(data.getInt(Params.code)==1){
-                        JSONArray leaves=data.getJSONArray(Params.data);
-                        List<Map<String,String>> leaves_data=new LinkedList<>();
-                        for(int i=0;i<leaves.length();i++){
-                            Map<String,String> leave_data=new HashMap<>();
-                            leave_data.put(Params.reason,leaves.getJSONObject(i).getString(Params.reason));
-                            leave_data.put(Params.type,leaves.getJSONObject(i).getString(Params.type));
-                            leave_data.put(Params.begin,leaves.getJSONObject(i).getString(Params.begin));
-                            leave_data.put(Params.days,leaves.getJSONObject(i).getString(Params.days));
-                            leaves_data.add(leave_data);
+                        JSONArray overtimes=data.getJSONArray(Params.data);
+                        List<Map<String,String>> overtimes_data=new LinkedList<>();
+                        for(int i=0;i<overtimes.length();i++){
+                            Map<String,String> overtime_data=new HashMap<>();
+                            overtime_data.put(Params.reason,overtimes.getJSONObject(i).getString(Params.reason));
+                            overtime_data.put(Params.address,overtimes.getJSONObject(i).getString(Params.address));
+                            overtime_data.put(Params.time,overtimes.getJSONObject(i).getString(Params.begin)+"-"+overtimes.getJSONObject(i).getString(Params.end));
+                            overtime_data.put(Params.date,overtimes.getJSONObject(i).getString(Params.date));
+                            overtimes_data.add(overtime_data);
                         }
-                        adapter=new SimpleAdapter(QingjiaListActivity.this,leaves_data,R.layout.list_item,new String[]{Params.reason,Params.type,Params.begin,Params.days},new int[]{R.id.one,R.id.two,R.id.three,R.id.four});
+                        adapter=new SimpleAdapter(JiabanListActivity.this,overtimes_data,R.layout.list_item,new String[]{Params.reason,Params.address,Params.date,Params.time},new int[]{R.id.one,R.id.two,R.id.three,R.id.four});
                         lv.setAdapter(adapter);
                     }else{
                         Utils.Toast(getApplicationContext(),data.getString(Params.msg));

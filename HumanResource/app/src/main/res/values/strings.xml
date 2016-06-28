@@ -87,4 +87,7 @@
         本合同（含附件）一式两份（鉴证时需一式三份，其中鉴证机构留存一份），双方签字后，甲方必须将其中一份交给乙方持有，均具有同等法律效力。甲方不把其中一份交给乙方持有的，视为尚未与乙方签订本劳动合同；发生纠纷时，不得以已签订本合同为由对抗乙方的主张，并由甲方承担相应的法律责任。\n
 </string>
     <string name="hint_word">请输入文字</string>
+    <string name="name">姓名</string>
+    <string name="date">日期</string>
+    <string name="salary">薪资</string>
 </resources>

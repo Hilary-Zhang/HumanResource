@@ -109,14 +109,14 @@ public class XiangmuActivity extends AppCompatActivity {
                     JSONObject data = new JSONObject((String) o);
                     if(data.getInt(Params.code)==1){
                         JSONArray projects=data.getJSONArray(Params.data);
-                        List<Map<String,String>> prjects_data=new LinkedList<>();
+                        List<Map<String,String>> projects_data=new LinkedList<>();
                         for(int i=0;i<projects.length();i++){
                             Map<String,String> project_data=new HashMap<>();
                             project_data.put(Params.name,projects.getJSONObject(i).getString(Params.name));
                             project_data.put(Params.detail,projects.getJSONObject(i).getString(Params.detail));
-                            prjects_data.add( project_data);
+                            projects_data.add( project_data);
                         }
-                        lv_unwork.setAdapter(new SimpleAdapter(XiangmuActivity.this,prjects_data,R.layout.xiangmu_item,new String[]{Params.name,Params.detail},new int[]{R.id.xiangmu_title,R.id.xiangmu_detail}));
+                        lv_unwork.setAdapter(new SimpleAdapter(XiangmuActivity.this,projects_data,R.layout.xiangmu_item,new String[]{Params.name,Params.detail},new int[]{R.id.xiangmu_title,R.id.xiangmu_detail}));
                     }else{
                         Utils.Toast(getApplicationContext(),data.getString(Params.msg));
                     }
@@ -139,14 +139,14 @@ public class XiangmuActivity extends AppCompatActivity {
                     JSONObject data = new JSONObject((String) o);
                     if(data.getInt(Params.code)==1){
                         JSONArray projects=data.getJSONArray(Params.data);
-                        List<Map<String,String>> prjects_data=new LinkedList<>();
+                        List<Map<String,String>> projects_data=new LinkedList<>();
                         for(int i=0;i<projects.length();i++){
                             Map<String,String> project_data=new HashMap<>();
                             project_data.put(Params.name,projects.getJSONObject(i).getString(Params.name));
                             project_data.put(Params.detail,projects.getJSONObject(i).getString(Params.detail));
-                            prjects_data.add( project_data);
+                            projects_data.add( project_data);
                         }
-                        lv_working.setAdapter(new SimpleAdapter(XiangmuActivity.this,prjects_data,R.layout.xiangmu_item,new String[]{Params.name,Params.detail},new int[]{R.id.xiangmu_title,R.id.xiangmu_detail}));
+                        lv_working.setAdapter(new SimpleAdapter(XiangmuActivity.this,projects_data,R.layout.xiangmu_item,new String[]{Params.name,Params.detail},new int[]{R.id.xiangmu_title,R.id.xiangmu_detail}));
                     }else{
                         Utils.Toast(getApplicationContext(),data.getString(Params.msg));
                     }
@@ -170,14 +170,14 @@ public class XiangmuActivity extends AppCompatActivity {
                     JSONObject data = new JSONObject((String) o);
                     if(data.getInt(Params.code)==1){
                         JSONArray projects=data.getJSONArray(Params.data);
-                        List<Map<String,String>> prjects_data=new LinkedList<>();
+                        List<Map<String,String>> projects_data=new LinkedList<>();
                         for(int i=0;i<projects.length();i++){
                             Map<String,String> project_data=new HashMap<>();
                             project_data.put(Params.name,projects.getJSONObject(i).getString(Params.name));
                             project_data.put(Params.detail,projects.getJSONObject(i).getString(Params.detail));
-                            prjects_data.add( project_data);
+                            projects_data.add( project_data);
                         }
-                        lv_worked.setAdapter(new SimpleAdapter(XiangmuActivity.this,prjects_data,R.layout.xiangmu_item,new String[]{Params.name,Params.detail},new int[]{R.id.xiangmu_title,R.id.xiangmu_detail}));
+                        lv_worked.setAdapter(new SimpleAdapter(XiangmuActivity.this,projects_data,R.layout.xiangmu_item,new String[]{Params.name,Params.detail},new int[]{R.id.xiangmu_title,R.id.xiangmu_detail}));
                     }else{
                         Utils.Toast(getApplicationContext(),data.getString(Params.msg));
                     }

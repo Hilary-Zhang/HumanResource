@@ -56,7 +56,6 @@
         <activity android:name=".XiangmuActivity" />
         <activity android:name=".XinziActivity" />
         <activity android:name=".WenjuanActivity" />
-        <activity android:name=".JixiaoActivity" />
         <activity android:name=".PeixunActivity" />
         <activity android:name=".LiuyanActivity" />
 
@@ -76,7 +75,10 @@
         <activity android:name=".GonggaoXiangqingActivity" />
         <activity android:name=".QingjiaListActivity" />
         <activity android:name=".ChuchaiListActivity" />
-        <activity android:name=".LizhiListActivity"></activity>
+        <activity android:name=".LizhiListActivity" />
+        <activity android:name=".JiabanListActivity" />
+        <activity android:name=".RizhiListActivity" />
+        <activity android:name=".WenjuanXiangqingActivity"></activity>
     </application>
 
 </manifest>

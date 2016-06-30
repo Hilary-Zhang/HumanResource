@@ -95,7 +95,6 @@ public class GonggaoActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(adapter==null)return;
                 Map<String,String> data= (Map<String, String>) adapter.getItem(position);
-
                 Intent i=new Intent(GonggaoActivity.this,GonggaoXiangqingActivity.class);
                 i.putExtra(Params.title,data.get(Params.title));
                 i.putExtra(Params.content,data.get(Params.content));

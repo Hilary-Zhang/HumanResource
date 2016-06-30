@@ -79,7 +79,7 @@ public class ChuchaiListActivity extends AppCompatActivity {
                             busines_data.put(Params.days,leaves.getJSONObject(i).getString(Params.days));
                             business_data.add(busines_data);
                         }
-                        adapter=new SimpleAdapter(ChuchaiListActivity.this,business_data,R.layout.list_item,new String[]{Params.reason,Params.address,Params.begin,Params.days},new int[]{R.id.name,R.id.time,R.id.content,R.id.state});
+                        adapter=new SimpleAdapter(ChuchaiListActivity.this,business_data,R.layout.list_item,new String[]{Params.reason,Params.address,Params.begin,Params.days},new int[]{R.id.one,R.id.two,R.id.three,R.id.four});
                         lv.setAdapter(adapter);
                     }else{
                         Utils.Toast(getApplicationContext(),data.getString(Params.msg));

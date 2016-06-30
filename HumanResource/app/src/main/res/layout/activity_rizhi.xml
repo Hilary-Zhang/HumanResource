@@ -36,6 +36,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/date"
                     android:layout_gravity="center"
                     android:textColor="@color/black"
                     android:textSize="18sp"
@@ -62,12 +63,14 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:text="完成工作"/>
+                android:text="完成工作:"/>
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/worked"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:textColorHint="@color/gray"
+                android:textColor="@color/black"
                 android:hint="@string/hint_word"
                 android:textSize="16sp"/>
         </LinearLayout>
@@ -82,12 +85,14 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:text="未完成工作"/>
+                android:text="未完成工作:"/>
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/unwork"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:textColorHint="@color/gray"
+                android:textColor="@color/black"
                 android:hint="@string/hint_word"
                 android:textSize="16sp"/>
         </LinearLayout>
@@ -102,13 +107,14 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:text="需协调工作"/>
+                android:text="需协调工作:"/>
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:id="@+id/evection_address"
+                android:id="@+id/working"
                 android:textColorHint="@color/gray"
+                android:textColor="@color/black"
                 android:hint="@string/hint_word"
                 android:textSize="16sp"/>
         </LinearLayout>
@@ -123,7 +129,9 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/remark"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:textColor="@color/black"
                 android:textColorHint="@color/gray"
                 android:hint="备注"
                 android:textSize="18sp"/>
@@ -132,6 +140,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:id="@+id/bt_save"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"

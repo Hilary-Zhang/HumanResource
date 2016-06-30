@@ -3,6 +3,7 @@ package com.hilary.humanresource;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -38,7 +39,7 @@ public class JiabanActivity extends AppCompatActivity {
     private TextView date,begin,end;
     private EditText address,reason;
     private TextView title;
-    private ImageView iv_drawer;
+    private ImageView iv_drawer,iv_look;
     private Button bt_save;
 
     private AsyncCustomEndpoints ace;
@@ -48,23 +49,33 @@ public class JiabanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jiaban);
+        CloseActivity.activityList.add(this);
 
         calendar=Calendar.getInstance();
         Bmob.initialize(this, Config.BMOB_APP_KEY);
         ace=new AsyncCustomEndpoints();
         user_preferences=getSharedPreferences(Params.user, Context.MODE_PRIVATE);
 
-        CloseActivity.activityList.add(this);
         title=(TextView)findViewById(R.id.title);
         iv_drawer=(ImageView)findViewById(R.id.iv_drawer);
+        iv_look=(ImageView)findViewById(R.id.iv_look);
+        title.setText("加班");
         iv_drawer.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_back));
+        iv_look.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_look));
         iv_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        title.setText("加班");
+        iv_look.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(JiabanActivity.this,JiabanListActivity.class));
+            }
+        });
+
+
 
         date=(TextView)findViewById(R.id.date);
         begin=(TextView)findViewById(R.id.begin);

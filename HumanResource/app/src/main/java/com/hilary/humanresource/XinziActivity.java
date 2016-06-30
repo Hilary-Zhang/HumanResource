@@ -73,7 +73,7 @@ public class XinziActivity extends AppCompatActivity {
                             salary_data.put(Params.salary,salaries.getJSONObject(i).getString(Params.salary));
                             salaries_data.add(salary_data);
                         }
-                        lv.setAdapter(new SimpleAdapter(XinziActivity.this,salaries_data,android.R.layout.simple_list_item_2,new String[]{Params.date,Params.salary},new int[]{android.R.id.text1,android.R.id.text2}));
+                        lv.setAdapter(new SimpleAdapter(XinziActivity.this,salaries_data,R.layout.xinzi_item,new String[]{Params.date,Params.salary},new int[]{R.id.date,R.id.salary}));
                     }else{
                         Utils.Toast(getApplicationContext(),data.getString(Params.msg));
                     }

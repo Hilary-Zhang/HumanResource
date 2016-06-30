@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
     private TabHost tab_host;
     private ExpandableListView ep;
     private View tab_view[];
-    private TextView tab_view_text[];
+    private TextView tab_view_text[],touxiang;
     private ImageView tab_view_image[];
     private LinearLayout ll_shouye,ll_xinxi, ll_zhidu, ll_gonggao, ll_setting;
     private RelativeLayout rl_qiandao, rl_qingjia, rl_chuchai, rl_jiaban, rl_lizhi, rl_hetong;
-    private RelativeLayout rl_xinzi, rl_wenjuan, rl_jixiao, rl_peixun, rl_rizhi, rl_xiangmu;
+    private RelativeLayout rl_xinzi, rl_wenjuan, rl_peixun, rl_rizhi, rl_xiangmu;
     //在SDK调用云端逻辑
     private AsyncCustomEndpoints ace;
 
@@ -236,6 +236,10 @@ public class MainActivity extends AppCompatActivity {
 
     //右划界面实现
     private void drawer() {
+
+        touxiang=(TextView)findViewById(R.id.touxiang);
+        touxiang.setText(user_preferences.getString(Params.username,""));
+
         ll_shouye=(LinearLayout)findViewById(R.id.shouye);
         ll_shouye.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -334,13 +338,11 @@ public class MainActivity extends AppCompatActivity {
     private void apply(){
         rl_xinzi=(RelativeLayout)findViewById(R.id.rl_xinzi);
         rl_wenjuan=(RelativeLayout)findViewById(R.id.rl_wenjuan);
-        rl_jixiao=(RelativeLayout)findViewById(R.id.rl_jixiao);
         rl_peixun=(RelativeLayout)findViewById(R.id.rl_peixun);
         rl_rizhi = (RelativeLayout) findViewById(R.id.rl_rizhi);
         rl_xiangmu = (RelativeLayout) findViewById(R.id.rl_xiangmu);
         rl_xinzi.setClickable(true);
         rl_wenjuan.setClickable(true);
-        rl_jixiao.setClickable(true);
         rl_peixun.setClickable(true);
         rl_rizhi.setClickable(true);
         rl_xiangmu.setClickable(true);
@@ -354,12 +356,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,WenjuanActivity.class));
-            }
-        });
-        rl_jixiao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,JixiaoActivity.class));
             }
         });
         rl_peixun.setOnClickListener(new View.OnClickListener() {

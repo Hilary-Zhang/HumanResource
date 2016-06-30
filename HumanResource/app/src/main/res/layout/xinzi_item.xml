@@ -3,9 +3,10 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/blue">
     <TextView
         android:text="@string/date"
+        android:id="@+id/date"
         android:layout_weight="1"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -15,6 +16,7 @@
         />
     <TextView
         android:text="@string/salary"
+        android:id="@+id/salary"
         android:layout_weight="1"
         android:textColor="@color/black"
         android:textSize="20sp"

@@ -1,16 +1,20 @@
 package com.hilary.humanresource;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -55,8 +59,9 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout rl_xinzi, rl_wenjuan, rl_peixun, rl_rizhi, rl_xiangmu;
     //在SDK调用云端逻辑
     private AsyncCustomEndpoints ace;
-
     private SharedPreferences user_preferences;
+    private SimpleExpandableListAdapter adapter;
+    private String select_items[]={"拨打电话","发送短信"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -216,8 +221,29 @@ public class MainActivity extends AppCompatActivity {
                             }
                             member_data.add(child);
                         }
-                        ep.setAdapter(new SimpleExpandableListAdapter(getApplicationContext(), department_data, R.layout.department, new String[]{Params.name},
-                                new int[]{R.id.department}, member_data, R.layout.member, new String[]{Params.member}, new int[]{R.id.member}));
+                        adapter=new SimpleExpandableListAdapter(getApplicationContext(), department_data, R.layout.department, new String[]{Params.name},
+                                new int[]{R.id.department}, member_data, R.layout.member, new String[]{Params.member}, new int[]{R.id.member});
+                        ep.setAdapter(adapter);
+
+                        ep.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+                            @Override
+                            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                                Map<String, String> temp= (Map<String, String>) adapter.getChild(groupPosition,childPosition);
+                                final String phone_number=temp.get(Params.phone_number);
+                                new AlertDialog.Builder(MainActivity.this)
+                                        .setItems(select_items, new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                if(which==0){
+                                                    startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+phone_number)).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                                }else if(which==1){
+                                                    startActivity(new Intent(Intent.ACTION_SENDTO,Uri.parse("smsto:"+phone_number)));
+                                                }
+                                            }
+                                        }).show();
+                                return true;
+                            }
+                        });
                     } else {
                         Utils.Toast(getApplicationContext(), result.getString(Params.msg));
                     }

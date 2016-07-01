@@ -29,7 +29,7 @@ public class GonggaoXiangqingActivity extends AppCompatActivity {
                 finish();
             }
         });
-        title.setText("公告详情");
+        title.setText("详情");
 
         Intent i=getIntent();
         TextView title=(TextView)findViewById(R.id.news_title);

@@ -30,6 +30,7 @@ public class Params{
     public final static String get_project="get_project";
     public final static String get_salary="get_salary";
     public final static String get_sign_list="get_sign_list";
+    public final static String get_train="get_train";
     public final static String latitude="latitude";
     public final static String login="login";
     public final static String longitude="longitude";

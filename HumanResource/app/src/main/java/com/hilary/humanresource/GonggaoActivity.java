@@ -34,7 +34,6 @@ public class GonggaoActivity extends AppCompatActivity {
     private ListView lv_news;
     private ListAdapter adapter;
     private AsyncCustomEndpoints ace;
-    private SharedPreferences user_preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +47,6 @@ public class GonggaoActivity extends AppCompatActivity {
 
         Bmob.initialize(this, Config.BMOB_APP_KEY);
         ace=new AsyncCustomEndpoints();
-        user_preferences=getSharedPreferences(Params.user, Context.MODE_PRIVATE);
         //toolbar返回按钮实现
         iv_drawer.setOnClickListener(new View.OnClickListener() {
             @Override
